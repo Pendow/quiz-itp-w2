@@ -29,7 +29,13 @@ def number_of_customers_per_state(customers):
     }
     """
     # Write your code here
-    return {key:len(value) for key,value in customers.items()}
+    d = {}
+    for key,value in customers.items():
+        if value == None:
+            value = []
+        d[key]=len(value)
+    return d
+
 
 
 class NumberOfCustomersPerStateTestCase(unittest.TestCase):
